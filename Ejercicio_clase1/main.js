@@ -11,7 +11,7 @@ const resultado = alert("Hola " + ingreso_usuario + "! Bienvenido");
 // Prueba con if
 let edadUsuario = prompt("Cuantos años tienes?")
 if (edadUsuario > 18){ 
-const resultadoEdad = alert("Eres Mayor de edad")
+    const resultadoEdad = alert("Eres Mayor de edad")
 }
 else {
     const resultadoEdad = alert("Eres menor de edad")
