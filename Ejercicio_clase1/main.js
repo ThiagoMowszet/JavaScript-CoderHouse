@@ -20,3 +20,6 @@ if (edadUsuario > 18){
 else {
     const resultadoEdad = alert("Eres menor de edad");
 }
+
+let edadFutura = edadUsuario + 5
+let resultadoFutura = alert("En 5 años vas a tener: " + edadFutura)
