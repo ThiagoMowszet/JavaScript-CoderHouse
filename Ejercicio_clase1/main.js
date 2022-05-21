@@ -4,8 +4,6 @@ Luego, con JavaScript, realiza operaciones matemáticas o de concatenación sobr
 Al finalizar mostrar el resultados con alert() o console.log()
 */
 
-debugger
-
 let ingreso_usuario = prompt("Hola! Como te llamas?");
 const resultado = alert("Hola " + ingreso_usuario + "! Bienvenido");
 
