@@ -4,15 +4,21 @@ Luego, con JavaScript, realiza operaciones matemáticas o de concatenación sobr
 Al finalizar mostrar el resultados con alert() o console.log()
 */
 
+debugger
+
 let ingreso_usuario = prompt("Hola! Como te llamas?");
 const resultado = alert("Hola " + ingreso_usuario + "! Bienvenido");
 
 
 // Prueba con if
-let edadUsuario = prompt("Cuantos años tienes?")
+let edadUsuario = parseInt(prompt("Cuantos años tienes?"));
+
+//edadUsuario = parseInt(edadUsuario)
+
 if (edadUsuario > 18){ 
-    const resultadoEdad = alert("Eres Mayor de edad")
+    console.log(edadUsuario)
+    const resultadoEdad = alert("Eres Mayor de edad");
 }
 else {
-    const resultadoEdad = alert("Eres menor de edad")
+    const resultadoEdad = alert("Eres menor de edad");
 }
