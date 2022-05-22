@@ -1,4 +1,4 @@
-
+// Crear un algoritmo utilizando un ciclo. 
 
 entradaUsuario = parseInt(prompt("Ingresa la tabla de multiplicar que desee saber: "));
 
