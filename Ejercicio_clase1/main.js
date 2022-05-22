@@ -11,9 +11,7 @@ const resultado = alert("Hola " + ingreso_usuario + "! Bienvenido");
 // Prueba con if
 let edadUsuario = parseInt(prompt("Cuantos años tienes?"));
 
-//edadUsuario = parseInt(edadUsuario)
-
-if (edadUsuario > 18){ 
+if (edadUsuario > 18){
     console.log(edadUsuario)
     const resultadoEdad = alert("Eres Mayor de edad");
 }
