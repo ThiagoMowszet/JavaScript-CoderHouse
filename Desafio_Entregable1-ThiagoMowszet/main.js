@@ -1,7 +1,9 @@
-// Ingreso de datos del usuario.
+// Declaramos las variables de entrada.
 let estatura
 let peso
 
+
+// Validamos que el usuario ingrese estatura y peso validos.
 do{
     estatura = parseFloat(prompt("Ingrese su estatura en cm (Ej: 1.70)"));
     peso = parseFloat(prompt("Ingrese su peso en kg (Ej: 70)"));
