@@ -23,6 +23,8 @@ else if(imc >= 30 && imc <= 39.9){
 else if(imc >= 40){
     alert("Su peso es de " + imc.toFixed(2) + " y usted esta con obesidad morbida.");
 }
-}
+    }
+
+// Llamamos a la funcion.
 
 calcularIMC(estatura, peso);
