@@ -1,16 +1,28 @@
 // Ingreso de datos del usuario.
 
-var a = parseFloat(prompt("Ingrese su estatura en cm (Ej: 1.70)"));
-var b = parseFloat(prompt("Ingrese su peso en kg (Ej: 70)"));
+var estatura = parseFloat(prompt("Ingrese su estatura en cm (Ej: 1.70)"));
+var peso = parseFloat(prompt("Ingrese su peso en kg (Ej: 70)"));
+
+
 // Funcion que calcula el IMC.
 function calcularIMC(estatura, peso){
     var imc = peso / (estatura * estatura);
-    return imc;
+
+if (imc < 18.5) {
+    alert("Su peso es de " + imc.toFixed(2) + " y usted esta bajo de peso.");
+}
+else if(imc >= 18.5 && imc <= 24.9){
+    alert("Su peso es de " + imc.toFixed(2) + " y usted esta en su peso ideal.");
+}
+else if(imc >= 25 && imc <= 29.9){
+    alert("Su peso es de " + imc.toFixed(2) + " y usted esta con sobrepeso.");
+}
+else if(imc >= 30 && imc <= 39.9){
+    alert("Su peso es de " + imc.toFixed(2) + " y usted esta con obesidad.");
+}
+else if(imc >= 40){
+    alert("Su peso es de " + imc.toFixed(2) + " y usted esta con obesidad morbida.");
+}
 }
 
-/*
-Llamamos a la funcion que determina el estado de salud del usuario.
-Le agregamos a la funcion el metodo .toFixed() para limitar el numero de decimales.
-*/
-
-var resultado = alert("Su indice de masa corporal es: " + calcularIMC(a, b).toFixed(2));
+calcularIMC(estatura, peso);
