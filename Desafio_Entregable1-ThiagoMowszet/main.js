@@ -1,5 +1,4 @@
 // Ingreso de datos del usuario.
-
 var estatura = parseFloat(prompt("Ingrese su estatura en cm (Ej: 1.70)"));
 var peso = parseFloat(prompt("Ingrese su peso en kg (Ej: 70)"));
 
@@ -26,5 +25,4 @@ else if(imc >= 40){
     }
 
 // Llamamos a la funcion.
-
 calcularIMC(estatura, peso);
