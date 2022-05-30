@@ -1,7 +1,7 @@
 // Ingreso de datos del usuario.
 
-var a = parseFloat(prompt("Ingrese su estatura en cm: "));
-var b = parseFloat(prompt("Ingrese su peso en kg: "));
+var a = parseFloat(prompt("Ingrese su estatura en cm (Ej: 1.70)"));
+var b = parseFloat(prompt("Ingrese su peso en kg (Ej: 70)"));
 // Funcion que calcula el IMC.
 function calcularIMC(estatura, peso){
     var imc = peso / (estatura * estatura);
