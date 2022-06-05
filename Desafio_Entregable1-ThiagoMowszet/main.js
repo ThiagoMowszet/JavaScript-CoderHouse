@@ -8,9 +8,9 @@ do{
     peso = parseFloat(prompt("Ingrese su peso en kg (Ej: 70)"));
 }while(estatura == "" || peso == "" || isNaN(estatura) || isNaN(peso));
 
-// Funcion que calcula el IMC.
-function calcularIMC(estatura, peso){
-    var imc = peso / (estatura * estatura);
+// Arrow Function que calcula el IMC.
+const calcularIMC = (estatura, peso) => {
+    let imc = peso / (estatura * estatura);
 
     if (imc < 18.5) {
         alert("Su peso es de " + imc.toFixed(2) + " y usted esta bajo de peso.");
@@ -32,19 +32,19 @@ function calcularIMC(estatura, peso){
 // Llamamos a la funcion.
 calcularIMC(estatura, peso);
 
+
 // Ejercicio Complementario 2
-
-
 let nombre = prompt("Ingrese su nombre: ");
 
 // Hacemos la variable del calculo de IMC global 
 let imc = peso / (estatura * estatura);
 
+// Informamos al usuario que recibira por consola sus datos en formato tabla.
 let mensaje = alert("Hola " + nombre + ", por consola recibira un resumen de sus datos.");
 let consejo = "Mantener un peso saludable puede reducir el riesgo de enfermedades crónicas asociadas al sobrepeso y la obesidad.";
 
 // Creamos nuestros Array para guardar los datos del usuario.
 const resumenUsuario = [{nombre: nombre, imc: imc.toFixed(2), estatura: estatura, peso: peso, consejo: consejo}];
 
-// Le mostramos por consolo el resumen de los datos que ingreso.
+// Le mostramos por consola el resumen de los datos que ingreso.
 console.table(resumenUsuario);
