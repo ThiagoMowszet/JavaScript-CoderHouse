@@ -2,7 +2,6 @@
 let estatura
 let peso
 
-
 // Validamos que el usuario ingrese estatura y peso validos.
 do{
     estatura = parseFloat(prompt("Ingrese su estatura en cm (Ej: 1.70)"));
@@ -32,3 +31,20 @@ function calcularIMC(estatura, peso){
 
 // Llamamos a la funcion.
 calcularIMC(estatura, peso);
+
+// Ejercicio Complementario 2
+
+
+let nombre = prompt("Ingrese su nombre: ");
+
+// Hacemos la variable del calculo de IMC global 
+let imc = peso / (estatura * estatura);
+
+let mensaje = alert("Hola " + nombre + ", por consola recibira un resumen de sus datos.");
+let consejo = "Mantener un peso saludable puede reducir el riesgo de enfermedades crónicas asociadas al sobrepeso y la obesidad.";
+
+// Creamos nuestros Array para guardar los datos del usuario.
+const resumenUsuario = [{nombre: nombre, imc: imc.toFixed(2), estatura: estatura, peso: peso, consejo: consejo}];
+
+// Le mostramos por consolo el resumen de los datos que ingreso.
+console.table(resumenUsuario);
