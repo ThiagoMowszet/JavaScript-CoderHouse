@@ -80,16 +80,16 @@ switch(prompt(menu)){
 
     case "1": 
         turnList.addTurno(
-            prompt("Seleccione la especialidad del dr:"),
-            prompt("Seleccione el dia que desee atenderse:"),
-            prompt("Seleccione la hora:")
+            prompt("Seleccione la especialidad del dr: (Ej: Traumatologo)"),
+            prompt("Seleccione el dia que desee atenderse: (Ej: 25 de Abril)"),
+            prompt("Seleccione la hora: (Ej: 22hrs)")
         );
         break;
 
     case "2":
         turnList.removeTurn(
-            prompt("Ingrese la especialidad de su doctor"),
-            prompt("Ingrese el dia del turno")
+            prompt("Ingrese la especialidad de su doctor: (Ej: Traumatologo)"),
+            prompt("Ingrese el dia del turno: (Ej: 25 de Abril)")
         );
         break;
 
@@ -99,7 +99,7 @@ switch(prompt(menu)){
 
     case "4":
         turnList.alertTurnByDay(
-            prompt("Seleccione el dia por el cual desee filtrar su turno: ")
+            prompt("Seleccione el dia por el cual desee filtrar su turno: (Ej: Traumatologia)")
         );
         break;
 
