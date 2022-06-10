@@ -99,7 +99,7 @@ switch(prompt(menu)){
 
     case "4":
         turnList.alertTurnByDay(
-            prompt("Seleccione el dia por el cual desee filtrar su turno: (Ej: Traumatologia)")
+            prompt("Seleccione el dia por el cual desee filtrar su turno: (Ej: 25 de abril)")
         );
         break;
 
