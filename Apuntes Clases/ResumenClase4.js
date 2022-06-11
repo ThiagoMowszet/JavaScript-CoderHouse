@@ -22,7 +22,7 @@ console.log(myArraySuma[0] + myArraySuma[2]) // 4
 // Recorro los valores de un array 
 
 const paises = ["Argentina", "Venezuela", "Colombia", "Peru"]
-for(let i = 0; i < 4; i++){
+for (let i = 0; i < 4; i++) {
     console.log(paises[i]) // Argentina, Venezuela, Colombia, Peru
 }
 
@@ -34,9 +34,9 @@ console.log(paises.length) // 4
 
 // Tambien usamos el metodo length para fijar el limite de una iteracion
 
-const numeros = [1,2,3,4,5,6,7,8,9]
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-for(let i = 0; i < numeros.length; i++){
+for (let i = 0; i < numeros.length; i++) {
     console.log(numeros[i]) // 1,2,3,4,5,6,7,8,9
 }
 
@@ -70,7 +70,7 @@ console.log(gaseosas) // [ 'Coca Cola', 'Fanta', 'Sprite', 'Mirinda' ]
 // Si queremos eliminar un valor que no sea el primero o el ultimo utilizamos el metodo .splice()
 // Funciona con 2 parametros, el primer parametro es el indice donde se ubica el metodo a trabajar.
 // El segundo parametro es la cantidad de elementos a eliminar desde esa posicion.
-gaseosas.splice(1,2)
+gaseosas.splice(1, 2)
 console.log(gaseosas) // [ 'Coca Cola', 'Mirinda' ]
 
 
@@ -102,9 +102,9 @@ console.log(nombresCortos) // [ 'Milagros', 'Magali' ]
 // El metodo .indexOf() nos permite obtener el indice de nuestros elementos del array. 
 
 const marcasAutos = ["BMW", "Volkswagen", "Peugeot"]
-console.log( marcasAutos.indexOf("Volkswagen") ) // 1
-console.log( marcasAutos.indexOf("Peugeot") ) // 2
-console.log( marcasAutos.indexOf("Ferrari") ) // -1, nos da esto resultado ya que "Ferrari" no existe.
+console.log(marcasAutos.indexOf("Volkswagen")) // 1
+console.log(marcasAutos.indexOf("Peugeot")) // 2
+console.log(marcasAutos.indexOf("Ferrari")) // -1, nos da esto resultado ya que "Ferrari" no existe.
 
 
 
@@ -112,8 +112,8 @@ console.log( marcasAutos.indexOf("Ferrari") ) // -1, nos da esto resultado ya qu
 // Y false en caso de ser falso y no existe
 
 const nombresPerros = ["Firulais", "Oscurito", "Docky", "Kyra"]
-console.log( (nombresPerros.includes("Firulais")) ) // true
-console.log( (nombresPerros.includes("Fatiga")) ) // false
+console.log((nombresPerros.includes("Firulais"))) // true
+console.log((nombresPerros.includes("Fatiga"))) // false
 
 
 // El metodo .reverse() nos invierte el orden de los elementos de un array.
@@ -126,13 +126,13 @@ console.log(comidas) // [ 'Pollo', 'Nutella', 'Asado', 'Alfajor' ]
 
 // for of, nos permite recorrer un array ejecutando un bloque de codigo por cada elemento.
 
-const productos = [{ id: 1, producto: "Detergente"},
-                   { id: 2, producto: "Jabon"},
-                   {id : 3, producto: "Shampoo"}];
+const productos = [{ id: 1, producto: "Detergente" },
+{ id: 2, producto: "Jabon" },
+{ id: 3, producto: "Shampoo" }];
 
-for(const producto of productos){
-    console.log(producto.id); 
-    console.log(producto.producto); 
+for (const producto of productos) {
+    console.log(producto.id);
+    console.log(producto.producto);
     // Salida: 1, Detergente: 2, Jabon: 3, Shampoo
 }
 
@@ -143,9 +143,9 @@ for(const producto of productos){
 // En esta parte me salteo abstraccion y funciones de orden superior ya que es teoria y debemos de leerlo para que nos quede claro. Pero les dejo un ejemplo que me sirvio para entender esto.
 
 // Ejemplo de funcion de orden superior 
-function porCadaUno(arr, fn){
+function porCadaUno(arr, fn) {
     for (const el of arr)
-    fn(el)
+        fn(el)
 }
 
 const numerosArray = [1, 2, 3, 4, 5]
@@ -156,14 +156,14 @@ porCadaUno(numerosArray, console.log) // 1  2  3  4  5
 
 // Al ser de orden superior, esto nos permite ahorrarnos lineas de codigo y tiempo, en lo contrario hubieramos hecho esto: 
 
- const numerosArray2 = [1, 2, 3, 4, 5]
- //                     0  1  2  3  4
+const numerosArray2 = [1, 2, 3, 4, 5]
+//                     0  1  2  3  4
 
- console.log(numerosArray2[0])
- console.log(numerosArray2[1])
- console.log(numerosArray2[2])
- console.log(numerosArray2[3])
- console.log(numerosArray2[4])
+console.log(numerosArray2[0])
+console.log(numerosArray2[1])
+console.log(numerosArray2[2])
+console.log(numerosArray2[3])
+console.log(numerosArray2[4])
 
 
 
@@ -177,7 +177,7 @@ porCadaUno(numerosArray, console.log) // 1  2  3  4  5
 
 const tablaDel5 = [5, 10, 15, 20, 25, 30]
 
-tablaDel5.forEach( (num) => {
+tablaDel5.forEach((num) => {
     console.log(num) // 5, 10, 15, 20, 25, 30
 });
 
@@ -187,8 +187,8 @@ tablaDel5.forEach( (num) => {
 // !!! Este metodo retorna el primer elemento que cumpla con la condicion !!!
 
 const alumnos = [
-    {nombre: "Tomas", nota: 6},
-    {nombre: "Constanza", nota: 10},
+    { nombre: "Tomas", nota: 6 },
+    { nombre: "Constanza", nota: 10 },
 ]
 
 const resultadoAlumnos = alumnos.find((el) => el.nombre === "Constanza")
@@ -203,11 +203,11 @@ console.log(resultadoAlumnos2) // undefined -> Retorna esto ya que no hay ningun
 // Si no hay coincidencias nos retornara un array vacio [].
 
 const autosAltaGama = [
-    {nombre: "Ferrari La Ferrari", precio: 1000000},
-    {nombre: "Lamborghini Huracan", precio: 250000},
-    {nombre: "Ferrari 458 Italia", precio: 55000},
-    {nombre: "Mercedes Benz Clase 3", precio: 48250},
-    {nombre: "Tesla Plaid S", precio: 25000},
+    { nombre: "Ferrari La Ferrari", precio: 1000000 },
+    { nombre: "Lamborghini Huracan", precio: 250000 },
+    { nombre: "Ferrari 458 Italia", precio: 55000 },
+    { nombre: "Mercedes Benz Clase 3", precio: 48250 },
+    { nombre: "Tesla Plaid S", precio: 25000 },
 ]
 
 // Fijarse tambien, como aplicamos el metodo .includes()        aca ⬇
@@ -222,17 +222,17 @@ console.log(resultadoAutos2) // [] -> array vacio, ya que no hay coincidencias.
 
 // Uso el ejemplo de autos de alta gama
 
-console.log( autosAltaGama.some((el) => el.nombre == "Tesla Plaid S")) // true
-console.log( autosAltaGama.some((el) => el.nombre == "Fiat 600")) // false
+console.log(autosAltaGama.some((el) => el.nombre == "Tesla Plaid S")) // true
+console.log(autosAltaGama.some((el) => el.nombre == "Fiat 600")) // false
 
 
-// .map() crea un nuevo array con todos los elementos del original transformados segun las operaciones de la funcion enviada por parametro.
+// .map() crea un nuevo array con todos los elementos del original transformados segun las operaciones de la funcion enviada por parametro. 
 
 const provinciasArgentinas = [
-    {provincia: "La rioja", region: "Cuyo"},
-    {provincia: "Mendoza", region: "Cuyo"},
-    {provincia: "San Luis", region: "Cuyo"},
-    {provincia: "San Juan", region: "Cuyo"},
+    { provincia: "La rioja", region: "Cuyo" },
+    { provincia: "Mendoza", region: "Cuyo" },
+    { provincia: "San Luis", region: "Cuyo" },
+    { provincia: "San Juan", region: "Cuyo" },
 ]
 
 const regionCuyo = provinciasArgentinas.map((el) => el.provincia)
@@ -242,7 +242,7 @@ console.log(regionCuyo) // [ 'La rioja', 'Mendoza', 'San Luis', 'San Juan' ] <- 
 // .map() se utiliza mucho para la transformacion de arrays.
 
 const transformacionArray = provinciasArgentinas.map((el) => {
-    return{
+    return {
         provincia: el.provincia,
         region: "Region " + el.region
     }
@@ -296,13 +296,13 @@ console.log(Math.E) // 2.718281828459045
 
 //Math.min() y Math.max() reciben una serie de argumentos numericos y devuelven aquel de valor minimo o maximo segun indiquemos. 
 
-console.log( Math.max( 1234, 12, 987, 981274, 28937, 33) ) // 981274
-console.log( Math.min( -22, 23984, 99, 3, -897, -9870, 33 ) ) // -9870
+console.log(Math.max(1234, 12, 987, 981274, 28937, 33)) // 981274
+console.log(Math.min(-22, 23984, 99, 3, -897, -9870, 33)) // -9870
 
 // Tambien se puede refenciar valores de infinito positivo o negativo a traves de la variable global Infinity.
 
-console.log( Math.max(55, Infinity, 0, -25, 93, 4) ) // Infinity
-console.log( Math.min(55, 13, 0, -Infinity, 93, 4) ) // -Infinity
+console.log(Math.max(55, Infinity, 0, -25, 93, 4)) // Infinity
+console.log(Math.min(55, 13, 0, -Infinity, 93, 4)) // -Infinity
 
 
 // CEIL, FLOOR & ROUND 
@@ -312,13 +312,13 @@ console.log( Math.min(55, 13, 0, -Infinity, 93, 4) ) // -Infinity
 const pi = Math.PI // 3.141592653589793
 
 // CEIL: devuelve el entero mayor o igual más próximo
-console.log( Math.ceil(pi) ) // 4
+console.log(Math.ceil(pi)) // 4
 
 // FLOOR: devuelve el entero más cercano redondeado hacia abajo
-console.log( Math.floor(pi) ) // 3
+console.log(Math.floor(pi)) // 3
 
 // ROUND: retorna el valor de un número redondeado al entero más cercano
-console.log( Math.round(pi) ) // 3
+console.log(Math.round(pi)) // 3
 
 
 
@@ -335,19 +335,19 @@ console.log(Math.sqrt(-1)) // NaN
 // Random
 // Math.random() genera un número pseudo-aleatorio entre 0 y 1, siendo el 0 límite inclusivo y el 1 exclusivo.
 
-console.log( Math.random() ) // 0.3850006109949691 <- Si ejecutan este metodo y no les da ese valor es porque genero otro resultado random.
-console.log( Math.random() ) // 0.7333420146407736 <- Si ejecutan este metodo y no les da ese valor es porque genero otro resultado random.
-console.log( Math.random() ) // 0.18096267775551889 <- Si ejecutan este metodo y no les da ese valor es porque genero otro resultado random.
+console.log(Math.random()) // 0.3850006109949691 <- Si ejecutan este metodo y no les da ese valor es porque genero otro resultado random.
+console.log(Math.random()) // 0.7333420146407736 <- Si ejecutan este metodo y no les da ese valor es porque genero otro resultado random.
+console.log(Math.random()) // 0.18096267775551889 <- Si ejecutan este metodo y no les da ese valor es porque genero otro resultado random.
 
 // Para generar números aleatorios dentro de un rango deseado, distinto de 0-1, podemos multiplicar su resultado por el rango esperado. A la vez podemos sumar el límite inferior si lo necesitamos
 
 
 // números entre 0 y 10
-console.log( Math.random() * 10 )
+console.log(Math.random() * 10)
 // números entre 0 y 50
-console.log( Math.random() * 50)
+console.log(Math.random() * 50)
 // números entre 20 y 50
-console.log( Math.random() * 30 + 20 )
+console.log(Math.random() * 30 + 20)
 
 
 
@@ -355,10 +355,10 @@ console.log( Math.random() * 30 + 20 )
 // Math.round() retornará números aleatorios en el rango de 0-100 inclusive. Si usara Math.ceil los números irían de 1 a 100, ya que siempre redondeará hacia arriba; y si usa Math.floor el rango sería de 0 a 99.
 
 const generadorNumero = () => {
-    return Math.round( Math.random() * 100 )
+    return Math.round(Math.random() * 100)
 }
 
-console.log( generadorNumero() ) // 44 -> en mi caso.
+console.log(generadorNumero()) // 44 -> en mi caso.
 
 
 
