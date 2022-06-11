@@ -112,3 +112,10 @@ switch(prompt(menu)){
         break;
     }
 }
+
+if (finished) {
+    alert("Gracias por utilizar el sistema de turnos")
+    
+}else{
+    alert("Usted no ha ingresado ninguna opcion")
+}
