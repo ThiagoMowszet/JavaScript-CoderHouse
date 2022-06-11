@@ -69,7 +69,7 @@ Es decir, acceder y/o modificar el contenido textual del algun elemento del DOM.
 
 
 // Codigo HTML de referencia
-//<h1 id="titulo"> Hola Mundo </h1> 
+//<h1 id="titulo"> <h1> Hola Mundo </h1> 
 
 let titulo = document.getElementById('titulo'); // Accedemos al elemento por su ID.
 console.log(titulo.innerText); // Muestra el texto dentro del elemento. --> Hola Mundo
