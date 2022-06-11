@@ -55,6 +55,9 @@ class TurnList {
         for (const item of dayFilter) {
             message = message.concat(`\n Usted tiene un turno con el ${item.fullName} el dia ${item.day} a las ${item.hour}`)
         }
+        if (dayFilter.length == 0) {
+            message = "No hay turnos registrados para ese dia"
+        }
         alert(message);
     }
 }
