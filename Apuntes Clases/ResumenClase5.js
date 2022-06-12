@@ -275,3 +275,177 @@ Descendiente = Se selecciona el elemento contenedor y despues el elemento a modi
 
 Pseudoclases = añadimos selectores a los elementos
 */
+
+
+
+
+/*
+
+Eventos en JS
+
+Los eventos son la manera que tenemos de controlar las acciones de los usuarios, definir un comportamiento de la pagina o 
+aplicacion cuando se produzcan.
+
+JS nos permite asignar una funcion a cada uno de los eventos. Son nombrados Event Handlers o manejadores de eventos.
+Ante cada evento se ejecuta una funcion asociada al mismo.
+
+
+Los eventos suceden constantemente en el navegador. JS nos permite escuchar eventos sobre elementos seleccionados.
+Cuando escuchamos uno de estos eventos, se ejecuta la funcion que nosotros definimos como respuesta.
+A esto lo definimos como Event Listener.
+
+*/
+
+
+
+// Como definir un evento
+
+addEventListener() // Funcion que nos permite agregar un evento a un elemento. El primer parametro es el evento que queremos escuchar y el segundo es la funcion que se ejecuta cuando se produce el evento.
+
+// Ejemplo de evento click
+
+// Codigo HTML de referencia.
+
+// <!DOCTYPE html>
+// <html>
+//   <head>
+//     <title>Mi primer App</title>
+//   </head>
+//   <body>
+//     <h2>Coder House</h2>
+//     <button id="btnPrincipal">CLICK</button>
+// <script>
+let boton = document.getElementById("btnPrincipal")
+boton.addEventListener("click", respuestaClick)
+function respuestaClick() {
+    console.log("Respuesta evento");
+}
+{/* </script>
+  </body>
+</html> */}
+
+
+
+// Tambien podemos emplear funciones anonimas para definir una funcion que se ejecuta cuando se produce un evento.
+
+// Codigo HTML de referencia.
+
+// <!DOCTYPE html>
+// <html>
+//   <head>
+//     <title>Mi primer App</title>
+//   </head>
+//   <body>
+//     <h2>Coder House</h2>
+//     <button id="btnPrincipal">CLICK</button>
+//     <script>
+let boton2 = document.getElementById("btnPrincipal")
+boton2.onclick = () => { console.log("Respuesta 2") }
+//     </script>
+//   </body>
+// </html>
+
+
+
+// Tambien podemos hacerlo desde HTML, aunque nos conviene mas usar la funcion anonima o el primer ejemplo.
+// Esta ultima opcion no se recomienda para proyectos en produccion.
+<input type="button" value="CLICK2" onclick="alert('Respuesta 3');" />
+
+
+
+
+/*
+
+Eventos Comunes
+
+1. Mouse -- Se producen cuando el mouse se mueve sobre un elemento.
+2. Teclado -- Se producen por la interacción del usuario con el teclado. 
+3. Change -- Se activa cuando se detecta un cambio en el valor del elemento.
+4. Input -- Se usa cuando queremos queremos ejecutar una funcion cada vez que se tipea sobre el elemento.
+5. Submit -- Se activa cuando el formulario es enviado.
+6. Otros
+
+
+*/
+
+
+
+// 1. Mouse
+
+mousedown() // Se produce cuando el mouse se presiona sobre un elemento.
+mouseup() // Se produce cuando el mouse se suelta sobre un elemento.
+mousemove() // Se produce cuando el mouse se mueve sobre un elemento.
+click() // Se activa después de mousedown o mouseup sobre un elemento válido
+
+
+// Codigo HTML de referencia.
+
+//<button id="btnMain">Click</button>
+
+let boton3 = document.getElementById("btnMain")
+boton3.onclick = () => { console.log("Click") }
+boton.onmousemove = () => { console.log("Movimiento") }
+
+
+
+// 2. Teclado
+
+keydown() // Se produce cuando se presiona una tecla.
+keyup() // Se produce cuando se suelta una tecla.
+
+
+//CODIGO HTML DE REFERENCIA
+//<input id = "nombre" type="text">
+//<input id = "edad"   type="number">
+
+let input1 = document.getElementById("nombre")
+let input2 = document.getElementById("edad")
+input1.onkeyup = () => { console.log("keyUp") }
+input2.onkeydown = () => { console.log("keyDown") }
+
+
+
+// 3. Change
+
+//CODIGO HTML DE REFERENCIA
+//<input id = "nombre" type="text">
+//<input id = "edad"   type="number">
+
+let input1 = document.getElementById("nombre");
+let input2 = document.getElementById("edad");
+input1.onchange = () => { console.log("valor1") };
+input2.onchange = () => { console.log("valor2") };
+
+
+
+// 4. Input
+
+
+//CODIGO HTML DE REFERENCIA
+//<input id = "nombre" type="text">
+
+
+let input1 = document.getElementById("nombre")
+input1.addEventListener(`input`, () => {
+    console.log(input1.value)
+})
+
+
+
+// 5. Submit
+
+//CODIGO HTML DE REFERENCIA
+
+//<form id="formulario">
+//<input type="text">
+//<input type="number">
+//<input type="submit" value="Enviar">
+//</form>
+
+let miFormulario = document.getElementById("formulario");
+miFormulario.addEventListener("submit", validarFormulario);
+
+function validarFormulario(e) {
+    e.preventDefault();
+    console.log("Formulario Enviado");
+}
