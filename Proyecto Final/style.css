@@ -1,8 +1,15 @@
 * {
-    background-color: aqua;
+    color: rgb(255, 255, 255);
+    background-color: rgb(46, 82, 109);
+    font-family: 'Quicksand', sans-serif;
 }
 
-body {
+h1 {
     display: flex;
     justify-content: center;
-}  
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
