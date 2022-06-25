@@ -1,6 +1,6 @@
 * {
     color: rgb(255, 255, 255);
-    background-color: rgb(46, 82, 109);
+    background-color: rgb(73, 29, 29);
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -12,4 +12,18 @@ h1 {
 .btn {
     display: flex;
     justify-content: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+#addTurn {
+    margin-top: 15px;
+}
+
+#table{
+    margin-top: 15px;
 }
