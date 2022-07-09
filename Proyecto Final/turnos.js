@@ -6,6 +6,15 @@ class MyTurns {
         tablehead.innerHTML = `<tr><th>Nombre</th><th>Dia</th><th>Hora</th></tr>`;
         table.append(tablehead);
         this.tablebody = this.table.appendChild(document.createElement("tbody"));
+
+        if (!sessionStorage.getItem("turns")) {
+            fetch("turnos.json")
+                .then(el => el.json())
+                .then((el) => { sessionStorage.setItem("turns", JSON.stringify(el)); this.loadTurns() });
+                
+        }else{
+            this.loadTurns()
+        }
     }
 
     loadTurns() {
@@ -22,4 +31,3 @@ class MyTurns {
 }
 
 let turnlist = new MyTurns(document.getElementById("table"));
-turnlist.loadTurns()

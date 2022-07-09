@@ -1,0 +1,22 @@
+[
+    {
+        "fullName": "Psicologo",
+        "hour": "22hrs",
+        "day": "25 de Marzo"
+    },
+    {
+        "fullName": "Neurologo",
+        "hour": "12hrs",
+        "day": "15 de Abril"
+    },
+    {
+        "fullName": "Oftalmologo",
+        "hour": "15hrs",
+        "day": "25 de Abril"
+    },
+    {
+        "fullName": "Traumatologo",
+        "hour": "18hrs",
+        "day": "2 de Mayo"
+    }
+]
