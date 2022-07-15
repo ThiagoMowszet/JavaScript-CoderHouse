@@ -22,6 +22,7 @@ Cada etiqueta es un objeto al que podemos llamar NODO, dentro del NODO padre ten
 */
 
 
+
 // Todos estos objetos son accesibles mediante el objeto global document. Ejemplos  ⬇
 
 document.body; // Acceder al body del documento HTML.
