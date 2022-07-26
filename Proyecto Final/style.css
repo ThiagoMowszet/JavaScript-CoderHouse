@@ -147,7 +147,7 @@ h1 {
 
 .card__apply {
   grid-row: 4/5;
-  align-self: center;
+  text-align: end;
 }
 
 /* CARD BACKGROUNDS */
@@ -192,7 +192,8 @@ h1 {
 
 .tableModal th,
 .tableModal td {
-  border: 3px solid;
+  border: 1px solid #ddd;
+  padding: 5px;
 }
 
 .tableModal tr {
@@ -204,4 +205,16 @@ h1 {
 .tableModal tbody,
 .tableModal thead {
   width: 100%;
+}
+
+.addButton{
+  cursor: pointer;
+}
+
+.searchButton{
+  cursor: pointer;
+}
+
+.removeButton{
+  cursor: pointer;
 }
