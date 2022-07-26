@@ -11,19 +11,14 @@ class Turn {
 }
 
 // Creo la clase lista de turnos.
-class TurnList {
+class TurnsManager {
     list = [];
-    constructor(table, addbutton) {
+    constructor(addbutton) {
         let validation = sessionStorage.getItem("turns")
         if (validation != undefined) {
             this.list = JSON.parse(validation);
         }
         this.addbutton = addbutton;
-        this.table = table;
-        let tablehead = document.createElement("thead")
-        tablehead.innerHTML = `<tr><th>Nombre</th><th>Dia</th><th>Hora</th></tr>`;
-        table.append(tablehead);
-        this.tablebody = this.table.appendChild(document.createElement("tbody"));
         let ref = this;
         this.addbutton.addEventListener("click", () => {
             Swal.fire({
@@ -56,16 +51,46 @@ class TurnList {
                 icon: "question",
                 html: `
                 <div class="addFormAlert">
+
                 <label for="especialidad">Ingrese la Especialidad</label>
-                <input id="especialidad" type="text">
+                <select id="especialidad">
+                    <option>Gruñón</option>
+                    <option>Feliz</option>
+                    <option>Dormilón</option>
+                    <option>Tímido</option>
+                    <option>Estornudo</option>
+                    <option>Tontín</option>
+                    <option>Doc</option>
+                </select>
+
                 <label for="diaTurno">Ingrese el dia del turno</label>
-                <input id="diaTurno" type="text">
+                <input id="diaTurno" type="date">
+
                 <label for="horaTurno">Ingrese la hora del turno</label>
-                <input id="horaTurno" type="text">
+                <input id="horaTurno" type="time">
                 </div>`
             });
         });
     }
 }
 
-let turnList = new TurnList(document.getElementById("table"), document.getElementById("addTurn"));
+let turnsManager = new TurnsManager(document.getElementsByClassName("addButton")[0]);
+
+
+
+let searchButton = document.getElementsByClassName("searchButton")[0];
+
+searchButton.addEventListener("click", () => {
+    Swal.fire({
+        html: createTable(turnsManager.list)
+    })
+});
+
+function createTable(list) {
+    let content = "<table class='tableModal'><thead><tr><th>Nombre</th><th>Dia</th><th>Hora</th></tr></thead><tbody>";
+    for (const element of list) {
+        content += `<tr><td>${element.fullName}</td><td>${element.day}</td><td>${element.hour}</td></tr>`;
+    }
+    content += "</tbody></table>";
+    return content;
+}

@@ -1,24 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turnos Online</title>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="main.js"></script>
-</head>
-<body>
-    <h1>Clinica Coder</h1> 
-    
-    <div class="container">
 
-        <a href="turnos.html" class="verTurnos">Mis Turnos</a>
-        <button id="addTurn">añadir turno</button>
-        <table id="table"></table>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turnos Online</title>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+</head>
+
+<body>
+  <h1>Clinica Coder</h1>
+
+  <div class="container">
+
+    <table id="table"></table>
+
+  </div>
+
+
+  <!-- Prueba Tarjetas -->
+
+  <div class="main-container">
+
+    <!-- Tarjeta 1 -->
+    <div class="cards">
+      <div class="card card-1">
+        <div class="card__icon"><i class="fas fa-bolt"></i></div>
+        <p class="card__exit"><i class="fas fa-times"></i></p>
+        <h2 class="card__title">Solicitar turno</h2>
+        <p class="card__apply">
+          <button class="card__link addButton">Solicitar<i class="fas fa-arrow-right"></i></button>
+        </p>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="card card-2">
+        <div class="card__icon"><i class="fas fa-bolt"></i></div>
+        <p class="card__exit"><i class="fas fa-times"></i></p>
+        <h2 class="card__title">Ver mis turnos</h2>
+        <p class="card__apply">
+          <button class="card__link searchButton">Buscar<i class="fas fa-arrow-right"></i></button>
+        </p>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="card card-3">
+        <div class="card__icon"><i class="fas fa-bolt"></i></div>
+        <p class="card__exit"><i class="fas fa-times"></i></p>
+        <h2 class="card__title">Cancelar mis turnos</h2>
+        <p class="card__apply">
+          <button class="card__link">Cancelar<i class="fas fa-arrow-right"></i></button>
+        </p>
+      </div>
 
     </div>
-    
+
 </body>
+
 </html>

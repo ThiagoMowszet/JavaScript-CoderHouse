@@ -3,7 +3,7 @@ class MyTurns {
     constructor(table) {
         this.table = table;
         let tablehead = document.createElement("thead");
-        tablehead.innerHTML = `<tr><th>Nombre</th><th>Dia</th><th>Hora</th></tr>`;
+        tablehead.innerHTML = `<tr><th>Especialidad</th><th>Dia</th><th>Hora</th></tr>`;
         table.append(tablehead);
         this.tablebody = this.table.appendChild(document.createElement("tbody"));
 
