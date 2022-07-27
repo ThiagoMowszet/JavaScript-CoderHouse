@@ -13,13 +13,50 @@ class Turn {
 // Creo la clase lista de turnos.
 class TurnsManager {
     list = [];
-    constructor(addbutton) {
+    createTable() {
+        let content = "<div class='modalContent'><table class='tableModal'><thead><tr><th>Especialidad</th><th>Dia</th><th>Hora</th></tr></thead><tbody>";
+        for (let i = 0; i < this.list.length; i++) {
+            content += `<tr><td>${this.list[i].fullName}</td><td>${this.list[i].day}</td><td>${this.list[i].hour}</td><td><button onclick="turnsManager.removeTurn(${i})">III</button></td></tr>`;
+        }
+        content += "</tbody></table></div>";
+        return content;
+    }
+    removeTurn(index) {
+        Swal.fire({
+            icon: "warning",
+            title: "¿Esta seguro?",
+            text: "Esta seguro que desea eliminar el turno?",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Si, eliminarlo!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                this.list.splice(index, 1);
+                let table = document.getElementsByClassName("modalContent")[0];
+                table.innerHTML = this.createTable();
+                sessionStorage.setItem("turns", JSON.stringify(this.list));
+                Swal.fire({
+                    icon: "success",
+                    title: "Listo",
+                    text: "Se ha eliminado el turno"
+                });
+            }
+        });
+    }
+    constructor(addbutton, searchButton) {
         let validation = sessionStorage.getItem("turns")
         if (validation != undefined) {
             this.list = JSON.parse(validation);
         }
         this.addbutton = addbutton;
+        this.searchButton = searchButton;
         let ref = this;
+        this.searchButton.addEventListener("click", () => {
+            Swal.fire({
+                html: ref.createTable()
+            })
+        });
         this.addbutton.addEventListener("click", () => {
             Swal.fire({
                 preConfirm: (response) => {
@@ -37,7 +74,6 @@ class TurnsManager {
                         } else {
                             let turn = document.createElement("tr")
                             turn.innerHTML = `<td>${especialidad}</td><td>${diaTurno}</td><td>${horaTurno}</td>`;
-                            ref.tablebody.append(turn);
                             this.list.push(new Turn(especialidad, diaTurno, horaTurno));
                             sessionStorage.setItem("turns", JSON.stringify(this.list));
                             Swal.fire({
@@ -74,23 +110,5 @@ class TurnsManager {
     }
 }
 
-let turnsManager = new TurnsManager(document.getElementsByClassName("addButton")[0]);
 
-
-
-let searchButton = document.getElementsByClassName("searchButton")[0];
-
-searchButton.addEventListener("click", () => {
-    Swal.fire({
-        html: createTable(turnsManager.list)
-    })
-});
-
-function createTable(list) {
-    let content = "<table class='tableModal'><thead><tr><th>Nombre</th><th>Dia</th><th>Hora</th></tr></thead><tbody>";
-    for (const element of list) {
-        content += `<tr><td>${element.fullName}</td><td>${element.day}</td><td>${element.hour}</td></tr>`;
-    }
-    content += "</tbody></table>";
-    return content;
-}
+let turnsManager = new TurnsManager(document.getElementsByClassName("addButton")[0], document.getElementsByClassName("searchButton")[0]);

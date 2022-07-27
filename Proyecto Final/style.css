@@ -143,6 +143,7 @@ h1 {
   grid-row: 3/4;
   font-weight: 400;
   color: #ffffff;
+  text-align: center;
 }
 
 .card__apply {
@@ -209,6 +210,7 @@ h1 {
 
 .addButton{
   cursor: pointer;
+  width: 100px;
 }
 
 .searchButton{
@@ -217,4 +219,12 @@ h1 {
 
 .removeButton{
   cursor: pointer;
+}
+
+.deleteButton{
+  cursor: pointer;
+}
+
+.material-symbols-outlined {
+  font-size: 30px;
 }
