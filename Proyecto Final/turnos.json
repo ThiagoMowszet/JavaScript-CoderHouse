@@ -1,22 +1,22 @@
 [
     {
         "fullName": "Psicologo",
-        "hour": "22hrs",
-        "day": "25 de Marzo"
+        "hour": "09:00",
+        "day": "2022-02-02"
     },
     {
         "fullName": "Neurologo",
-        "hour": "12hrs",
-        "day": "15 de Abril"
+        "hour": "12:00",
+        "day": "2022-09-09"
     },
     {
         "fullName": "Oftalmologo",
-        "hour": "15hrs",
-        "day": "25 de Abril"
+        "hour": "15:00",
+        "day": "2022-05-22"
     },
     {
         "fullName": "Traumatologo",
-        "hour": "18hrs",
-        "day": "2 de Mayo"
+        "hour": "18:15",
+        "day": "2022-02-02"
     }
 ]

@@ -10,13 +10,19 @@ class Turn {
     }
 }
 
+
 // Creo la clase lista de turnos.
 class TurnsManager {
     list = [];
+    loadTurns() {
+        this.list = JSON.parse(sessionStorage.getItem("turns"));
+    }
     createTable() {
         let content = "<div class='modalContent'><table class='tableModal'><thead><tr><th>Especialidad</th><th>Dia</th><th>Hora</th></tr></thead><tbody>";
         for (let i = 0; i < this.list.length; i++) {
-            content += `<tr><td>${this.list[i].fullName}</td><td>${this.list[i].day}</td><td>${this.list[i].hour}</td><td><button onclick="turnsManager.removeTurn(${i})">III</button></td></tr>`;
+            content += `<tr><td>${this.list[i].fullName}</td><td>${this.list[i].day}</td><td>${this.list[i].hour}</td><td><button onclick="turnsManager.removeTurn(${i})"><span class="material-symbols-outlined">
+            close
+            </span></button></td></tr>`;
         }
         content += "</tbody></table></div>";
         return content;
@@ -33,8 +39,6 @@ class TurnsManager {
         }).then((result) => {
             if (result.isConfirmed) {
                 this.list.splice(index, 1);
-                let table = document.getElementsByClassName("modalContent")[0];
-                table.innerHTML = this.createTable();
                 sessionStorage.setItem("turns", JSON.stringify(this.list));
                 Swal.fire({
                     icon: "success",
@@ -45,10 +49,10 @@ class TurnsManager {
         });
     }
     constructor(addbutton, searchButton) {
-        let validation = sessionStorage.getItem("turns")
-        if (validation != undefined) {
-            this.list = JSON.parse(validation);
-        }
+        fetch("./turnos.json")
+            .then(el => el.json())
+            .then((el) => { sessionStorage.setItem('turns', JSON.stringify(el)) })
+        this.loadTurns();
         this.addbutton = addbutton;
         this.searchButton = searchButton;
         let ref = this;
@@ -109,6 +113,5 @@ class TurnsManager {
         });
     }
 }
-
 
 let turnsManager = new TurnsManager(document.getElementsByClassName("addButton")[0], document.getElementsByClassName("searchButton")[0]);
