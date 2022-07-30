@@ -18,11 +18,9 @@ class TurnsManager {
         this.list = JSON.parse(sessionStorage.getItem("turns"));
     }
     createTable() {
-        let content = "<div class='modalContent'><table class='tableModal'><thead><tr><th>Especialidad</th><th>Dia</th><th>Hora</th></tr></thead><tbody>";
+        let content = "<div class='modalContent'><table class='tableModal'><thead><tr><th>Especialidad</th><th>Dia</th><th>Hora</th><th>Eliminar</th></tr></thead><tbody>";
         for (let i = 0; i < this.list.length; i++) {
-            content += `<tr><td>${this.list[i].fullName}</td><td>${this.list[i].day}</td><td>${this.list[i].hour}</td><td><button onclick="turnsManager.removeTurn(${i})"><span class="material-symbols-outlined">
-            close
-            </span></button></td></tr>`;
+            content += `<tr><td>${this.list[i].fullName}</td><td>${this.list[i].day}</td><td>${this.list[i].hour}</td><td><a class="trash" onclick="turnsManager.removeTurn(${i})"><span class="material-symbols-outlined">delete</span></a></td></tr>`;
         }
         content += "</tbody></table></div>";
         return content;
@@ -94,13 +92,22 @@ class TurnsManager {
 
                 <label for="especialidad">Ingrese la Especialidad</label>
                 <select id="especialidad">
-                    <option>Gruñón</option>
-                    <option>Feliz</option>
-                    <option>Dormilón</option>
-                    <option>Tímido</option>
-                    <option>Estornudo</option>
-                    <option>Tontín</option>
-                    <option>Doc</option>
+                <option value="">Seleccione la especialidad</option>
+                <option> Pediatria </option>
+                <option> Ginecologia </option>
+                <option> Cirugia </option>
+                <option> Psiquiatria </option>
+                <option> Cardiologia </option>
+                <option> Dermatologia </option>
+                <option> Gastroenterologia </option>
+                <option> Infectoligia </option>
+                <option> Oftalmologia </option>
+                <option> Otorrinolaringologia </option>
+                <option> Neumologia </option>
+                <option> Neurologia </option>
+                <option> Radiologia </option>
+                <option> Oncologia </option>
+                <option> Urologia </option>
                 </select>
 
                 <label for="diaTurno">Ingrese el dia del turno</label>
